@@ -32,9 +32,9 @@ func main() {
 	for _, sleep := range funcs {
 		wg.Add(1)
 
-		go func(function func()) {
+		go func(f func()) {
 			defer wg.Done()
-			function()
+			f()
 		}(sleep)
 	}
 
